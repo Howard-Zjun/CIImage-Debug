@@ -7,14 +7,25 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7A65259188621D216C20F318 /* Pods_CIImage_Debug.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 632FF4D25883B84D8953A7C1 /* Pods_CIImage_Debug.framework */; };
+		EB6B56ED2C9EB4E3008E6F92 /* CDSingleDebugViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB6B56EC2C9EB4E3008E6F92 /* CDSingleDebugViewController.swift */; };
+		EB6B56F12C9EB960008E6F92 /* CDStyleCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB6B56F02C9EB960008E6F92 /* CDStyleCell.swift */; };
+		EB6B56F32C9EBAFE008E6F92 /* CDSliderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB6B56F22C9EBAFE008E6F92 /* CDSliderView.swift */; };
 		EB8B79712C9AA9D9005CF6AD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB8B79702C9AA9D9005CF6AD /* AppDelegate.swift */; };
 		EB8B79752C9AA9D9005CF6AD /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB8B79742C9AA9D9005CF6AD /* ViewController.swift */; };
 		EB8B79782C9AA9D9005CF6AD /* Base in Resources */ = {isa = PBXBuildFile; fileRef = EB8B79772C9AA9D9005CF6AD /* Base */; };
 		EB8B797A2C9AA9DF005CF6AD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EB8B79792C9AA9DF005CF6AD /* Assets.xcassets */; };
 		EB8B797D2C9AA9DF005CF6AD /* Base in Resources */ = {isa = PBXBuildFile; fileRef = EB8B797C2C9AA9DF005CF6AD /* Base */; };
+		EB8B798A2C9D1273005CF6AD /* TabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB8B79892C9D1273005CF6AD /* TabViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		632FF4D25883B84D8953A7C1 /* Pods_CIImage_Debug.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CIImage_Debug.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		6815573B5A6060B358BCB2F5 /* Pods-CIImage-Debug.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CIImage-Debug.debug.xcconfig"; path = "Target Support Files/Pods-CIImage-Debug/Pods-CIImage-Debug.debug.xcconfig"; sourceTree = "<group>"; };
+		A6BA733E2273098C9A1B16C1 /* Pods-CIImage-Debug.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CIImage-Debug.release.xcconfig"; path = "Target Support Files/Pods-CIImage-Debug/Pods-CIImage-Debug.release.xcconfig"; sourceTree = "<group>"; };
+		EB6B56EC2C9EB4E3008E6F92 /* CDSingleDebugViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CDSingleDebugViewController.swift; sourceTree = "<group>"; };
+		EB6B56F02C9EB960008E6F92 /* CDStyleCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CDStyleCell.swift; sourceTree = "<group>"; };
+		EB6B56F22C9EBAFE008E6F92 /* CDSliderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CDSliderView.swift; sourceTree = "<group>"; };
 		EB8B796D2C9AA9D9005CF6AD /* CIImage-Debug.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "CIImage-Debug.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		EB8B79702C9AA9D9005CF6AD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EB8B79742C9AA9D9005CF6AD /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -23,6 +34,7 @@
 		EB8B797C2C9AA9DF005CF6AD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		EB8B797E2C9AA9DF005CF6AD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EB8B79852C9AC287005CF6AD /* CIImage-Debug-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "CIImage-Debug-Bridging-Header.h"; sourceTree = "<group>"; };
+		EB8B79892C9D1273005CF6AD /* TabViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -30,17 +42,37 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7A65259188621D216C20F318 /* Pods_CIImage_Debug.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4B6A5F3F7ADDF53AE0BD6E90 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				632FF4D25883B84D8953A7C1 /* Pods_CIImage_Debug.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		EB6B56EF2C9EB921008E6F92 /* Single */ = {
+			isa = PBXGroup;
+			children = (
+				EB6B56EC2C9EB4E3008E6F92 /* CDSingleDebugViewController.swift */,
+				EB6B56F02C9EB960008E6F92 /* CDStyleCell.swift */,
+			);
+			path = Single;
+			sourceTree = "<group>";
+		};
 		EB8B79642C9AA9D9005CF6AD = {
 			isa = PBXGroup;
 			children = (
 				EB8B796F2C9AA9D9005CF6AD /* CIImage-Debug */,
 				EB8B796E2C9AA9D9005CF6AD /* Products */,
+				FB7DF2FB61F872AE2F16DA43 /* Pods */,
+				4B6A5F3F7ADDF53AE0BD6E90 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -55,6 +87,7 @@
 		EB8B796F2C9AA9D9005CF6AD /* CIImage-Debug */ = {
 			isa = PBXGroup;
 			children = (
+				EB6B56EF2C9EB921008E6F92 /* Single */,
 				EB8B79842C9AADC5005CF6AD /* Blur Filters */,
 				EB8B79702C9AA9D9005CF6AD /* AppDelegate.swift */,
 				EB8B79742C9AA9D9005CF6AD /* ViewController.swift */,
@@ -63,6 +96,8 @@
 				EB8B797B2C9AA9DF005CF6AD /* LaunchScreen.storyboard */,
 				EB8B797E2C9AA9DF005CF6AD /* Info.plist */,
 				EB8B79852C9AC287005CF6AD /* CIImage-Debug-Bridging-Header.h */,
+				EB8B79892C9D1273005CF6AD /* TabViewController.swift */,
+				EB6B56F22C9EBAFE008E6F92 /* CDSliderView.swift */,
 			);
 			path = "CIImage-Debug";
 			sourceTree = "<group>";
@@ -74,6 +109,15 @@
 			path = "Blur Filters";
 			sourceTree = "<group>";
 		};
+		FB7DF2FB61F872AE2F16DA43 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				6815573B5A6060B358BCB2F5 /* Pods-CIImage-Debug.debug.xcconfig */,
+				A6BA733E2273098C9A1B16C1 /* Pods-CIImage-Debug.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -81,9 +125,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = EB8B79812C9AA9DF005CF6AD /* Build configuration list for PBXNativeTarget "CIImage-Debug" */;
 			buildPhases = (
+				AA0591BBDE67C20C8922EB5C /* [CP] Check Pods Manifest.lock */,
 				EB8B79692C9AA9D9005CF6AD /* Sources */,
 				EB8B796A2C9AA9D9005CF6AD /* Frameworks */,
 				EB8B796B2C9AA9D9005CF6AD /* Resources */,
+				22172C1D08D29B5BDCA62FE5 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -141,12 +187,58 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		22172C1D08D29B5BDCA62FE5 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-CIImage-Debug/Pods-CIImage-Debug-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-CIImage-Debug/Pods-CIImage-Debug-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-CIImage-Debug/Pods-CIImage-Debug-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		AA0591BBDE67C20C8922EB5C /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-CIImage-Debug-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		EB8B79692C9AA9D9005CF6AD /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EB8B798A2C9D1273005CF6AD /* TabViewController.swift in Sources */,
 				EB8B79752C9AA9D9005CF6AD /* ViewController.swift in Sources */,
+				EB6B56F32C9EBAFE008E6F92 /* CDSliderView.swift in Sources */,
+				EB6B56F12C9EB960008E6F92 /* CDStyleCell.swift in Sources */,
+				EB6B56ED2C9EB4E3008E6F92 /* CDSingleDebugViewController.swift in Sources */,
 				EB8B79712C9AA9D9005CF6AD /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -294,6 +386,7 @@
 		};
 		EB8B79822C9AA9DF005CF6AD /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6815573B5A6060B358BCB2F5 /* Pods-CIImage-Debug.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -325,6 +418,7 @@
 		};
 		EB8B79832C9AA9DF005CF6AD /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A6BA733E2273098C9A1B16C1 /* Pods-CIImage-Debug.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;

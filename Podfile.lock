@@ -1,0 +1,21 @@
+PODS:
+  - MyBaseExtension (0.0.1)
+  - MyControlView (0.0.1)
+
+DEPENDENCIES:
+  - MyBaseExtension (from `/Users/guanjiayin/MyBaseExtension`)
+  - MyControlView (from `/Users/guanjiayin/MyControlView`)
+
+EXTERNAL SOURCES:
+  MyBaseExtension:
+    :path: "/Users/guanjiayin/MyBaseExtension"
+  MyControlView:
+    :path: "/Users/guanjiayin/MyControlView"
+
+SPEC CHECKSUMS:
+  MyBaseExtension: b7909cc5dfb6760f7e04c1d7f39b3a204c22a2d7
+  MyControlView: 9d7c1a931c12b8d07c1acbda9172c9a11ebc84a2
+
+PODFILE CHECKSUM: c0d0aef92ade4b6ea2b45ef8e7809d5218a24b4b
+
+COCOAPODS: 1.15.2

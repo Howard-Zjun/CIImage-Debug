@@ -2,16 +2,17 @@
 //  ViewController.swift
 //  CIImage-Debug
 //
-//  Created by ios on 2024/9/18.
+//  Created by Howard-Zjun on 2024/9/18.
 //
 
 import UIKit
+import MyBaseExtension
 
 class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        let _ = "123".isNumber
     }
 
 
