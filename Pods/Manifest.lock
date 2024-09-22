@@ -3,19 +3,27 @@ PODS:
   - MyControlView (0.0.1)
 
 DEPENDENCIES:
-  - MyBaseExtension (from `/Users/guanjiayin/MyBaseExtension`)
-  - MyControlView (from `/Users/guanjiayin/MyControlView`)
+  - MyBaseExtension (from `https://github.com/Howard-Zjun/MyBaseExtension.git`)
+  - MyControlView (from `https://github.com/Howard-Zjun/MyControlView.git`)
 
 EXTERNAL SOURCES:
   MyBaseExtension:
-    :path: "/Users/guanjiayin/MyBaseExtension"
+    :git: https://github.com/Howard-Zjun/MyBaseExtension.git
   MyControlView:
-    :path: "/Users/guanjiayin/MyControlView"
+    :git: https://github.com/Howard-Zjun/MyControlView.git
+
+CHECKOUT OPTIONS:
+  MyBaseExtension:
+    :commit: b588886d3c242d8276634cf6d7ac5e36f69918ee
+    :git: https://github.com/Howard-Zjun/MyBaseExtension.git
+  MyControlView:
+    :commit: 0ade4852b07b9e4c1a378de009bde0f8e564d5cb
+    :git: https://github.com/Howard-Zjun/MyControlView.git
 
 SPEC CHECKSUMS:
   MyBaseExtension: b7909cc5dfb6760f7e04c1d7f39b3a204c22a2d7
   MyControlView: 9d7c1a931c12b8d07c1acbda9172c9a11ebc84a2
 
-PODFILE CHECKSUM: c0d0aef92ade4b6ea2b45ef8e7809d5218a24b4b
+PODFILE CHECKSUM: e1fb4cc1a38fc9219623b9ddcfc8653bb8c9d2e9
 
-COCOAPODS: 1.15.2
+COCOAPODS: 1.14.3
