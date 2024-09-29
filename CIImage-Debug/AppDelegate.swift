@@ -6,6 +6,8 @@
 //
 
 import UIKit
+@_exported import MyBaseExtension
+@_exported import MyControlView
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {

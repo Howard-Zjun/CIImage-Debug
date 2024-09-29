@@ -15,7 +15,7 @@ class TabViewController: UITabBarController {
     }
     
     func configTabBar() {
-        let singleDebugVC = UINavigationController(rootViewController: SingleDebugViewController())
+        let singleDebugVC = UINavigationController(rootViewController: CDSingleDebugViewController())
         singleDebugVC.tabBarItem.title = "单个调试"
         singleDebugVC.tabBarItem.setTitleTextAttributes([.font : UIFont.systemFont(ofSize: 14)], for: .normal)
         singleDebugVC.tabBarItem.setTitleTextAttributes([.foregroundColor : UIColor(hex: 0x3FA0FF)], for: .selected)

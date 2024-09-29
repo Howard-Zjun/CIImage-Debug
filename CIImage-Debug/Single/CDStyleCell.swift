@@ -2,10 +2,11 @@
 //  CDStyleCell.swift
 //  CIImage-Debug
 //
-//  Created by ios on 2024/9/21.
+//  Created by Howard-Zjun on 2024/9/21.
 //
 
 import UIKit
+import MyBaseExtension
 
 class CDStyleCell: UICollectionViewCell {
     
@@ -33,7 +34,7 @@ class CDStyleCell: UICollectionViewCell {
         fatalError("init(coder:) has not been implemented")
     }
     
-    func config(img: UIImage, text: String) {
+    func config(img: UIImage?, text: String) {
         imgV.image = img
         lab.text = text
     }
