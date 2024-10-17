@@ -1,36 +1,25 @@
 PODS:
-  - MyBaseExtension (0.0.2)
-  - MyControlView (0.0.2)
+  - MyBaseExtension (0.0.3)
+  - MyControlView (0.0.5):
+    - MyBaseExtension (~> 0.0.3)
   - SnapKit (5.7.1)
 
 DEPENDENCIES:
-  - MyBaseExtension (from `https://github.com/Howard-Zjun/MyBaseExtension.git`)
-  - MyControlView (from `https://github.com/Howard-Zjun/MyControlView.git`)
+  - MyBaseExtension
+  - MyControlView
   - SnapKit
 
 SPEC REPOS:
   https://github.com/CocoaPods/Specs.git:
+    - MyBaseExtension
+    - MyControlView
     - SnapKit
 
-EXTERNAL SOURCES:
-  MyBaseExtension:
-    :git: https://github.com/Howard-Zjun/MyBaseExtension.git
-  MyControlView:
-    :git: https://github.com/Howard-Zjun/MyControlView.git
-
-CHECKOUT OPTIONS:
-  MyBaseExtension:
-    :commit: 42a3aed0da65e44891a278c92a7f1ae34eb9ba16
-    :git: https://github.com/Howard-Zjun/MyBaseExtension.git
-  MyControlView:
-    :commit: c0ce547876a2b7ec7f765d17f6cf495bec96161a
-    :git: https://github.com/Howard-Zjun/MyControlView.git
-
 SPEC CHECKSUMS:
-  MyBaseExtension: 8802b9458097a74ebd2e9c2150235e3fcc8fe890
-  MyControlView: f3e4c55e445c17bd2d76cd5ee74d335abb7dbba7
+  MyBaseExtension: 1c32c1b8f83d2371320a8c74dfaa58e181b2c2bf
+  MyControlView: 3a48821a0df70ef6283b1dd5e6bfc8a7498f68b5
   SnapKit: d612e99e678a2d3b95bf60b0705ed0a35c03484a
 
-PODFILE CHECKSUM: 1c524ce72f3b63bdd3898a64941eefa8f0409696
+PODFILE CHECKSUM: 4204e34565025c512d1e6a785ffdae36f14ad197
 
 COCOAPODS: 1.15.2

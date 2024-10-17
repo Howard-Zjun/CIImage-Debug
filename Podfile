@@ -10,8 +10,10 @@ def commonPods
   
 #  pod 'MyBaseExtension', :path => '/Users/Howard-Zjun/MyBaseExtension'
 #  pod 'MyControlView', :path => '/Users/Howard-Zjun/MyControlView'
-  pod 'MyBaseExtension', :git => 'https://github.com/Howard-Zjun/MyBaseExtension.git'
-  pod 'MyControlView', :git => 'https://github.com/Howard-Zjun/MyControlView.git'
+#  pod 'MyBaseExtension', :git => 'https://github.com/Howard-Zjun/MyBaseExtension.git'
+#  pod 'MyControlView', :git => 'https://github.com/Howard-Zjun/MyControlView.git'
+  pod 'MyBaseExtension'
+  pod 'MyControlView'
   pod 'SnapKit'
 end
 
