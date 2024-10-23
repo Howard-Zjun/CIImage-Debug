@@ -28,7 +28,12 @@ class CDSingleDebugViewController: UIViewController {
     var curModel: FilterContentModel?
     
     var types: [[CIFilter]] = [
-        [CIFilter.bokehBlur(), CIFilter.boxBlur(), CIFilter.discBlur(), CIFilter.gaussianBlur(), CIFilter.maskedVariableBlur(), CIFilter.median(), CIFilter.morphologyGradient(), CIFilter.morphologyMaximum(), CIFilter.morphologyMinimum(), CIFilter.morphologyRectangleMaximum(), CIFilter.morphologyRectangleMinimum(), CIFilter.motionBlur(), CIFilter.noiseReduction(), CIFilter.zoomBlur()]
+        // CICategoryBlur
+        [CIFilter.bokehBlur(), CIFilter.boxBlur(), CIFilter.discBlur(), CIFilter.gaussianBlur(), CIFilter.maskedVariableBlur(), CIFilter.median(), CIFilter.morphologyGradient(), CIFilter.morphologyMaximum(), CIFilter.morphologyMinimum(), CIFilter.morphologyRectangleMaximum(), CIFilter.morphologyRectangleMinimum(), CIFilter.motionBlur(), CIFilter.noiseReduction(), CIFilter.zoomBlur()],
+        // CICategoryGradient
+        [CIFilter.gaussianGradient(), CIFilter.hueSaturationValueGradient(), CIFilter.linearGradient(), CIFilter.radialGradient(), CIFilter.smoothLinearGradient()],
+        // CICategorySharpen
+        [CIFilter.sharpenLuminance(), CIFilter.unsharpMask()],
     ]
     
     var dict: [String : FilterContentModel] = [:]
@@ -95,7 +100,7 @@ class CDSingleDebugViewController: UIViewController {
         if let ret {
             return ret
         }
-        ret = CategoryBlurContentModel(categoryBlur: filter)
+        ret = FilterContentModel(categoryBlur: filter)
         if let cgImage = selectImg.cgImage {
             filter.setValue(CIImage(cgImage: cgImage), forKey: "inputImage")
         }
@@ -151,9 +156,7 @@ extension CDSingleDebugViewController: UICollectionViewDelegate, UICollectionVie
         let cell = collectionView.dequeueReusableCell(CDStyleCell.self, indexPath: indexPath)
         let type = types[indexPath.section][indexPath.item]
         let model = resolver(filter: type)
-        if let categoryBlurModel = model as? CategoryBlurContentModel {
-            cell.config(text: categoryBlurModel.name)
-        }
+        cell.config(text: model.name)
         return cell
     }
     

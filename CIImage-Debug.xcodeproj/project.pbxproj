@@ -9,12 +9,12 @@
 /* Begin PBXBuildFile section */
 		7A65259188621D216C20F318 /* Pods_CIImage_Debug.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 632FF4D25883B84D8953A7C1 /* Pods_CIImage_Debug.framework */; };
 		EB09828A2CA3E4810030225F /* SliderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB0982892CA3E4810030225F /* SliderCell.swift */; };
-		EB09828D2CA3EE3E0030225F /* FilterContentModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB09828C2CA3EE3E0030225F /* FilterContentModel.swift */; };
-		EB0982902CA3EF540030225F /* CategoryBlurContentModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB09828F2CA3EF540030225F /* CategoryBlurContentModel.swift */; };
+		EB0982902CA3EF540030225F /* FilterContentModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB09828F2CA3EF540030225F /* FilterContentModel.swift */; };
 		EB0982922CA3F01F0030225F /* FilterValueModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB0982912CA3F01F0030225F /* FilterValueModel.swift */; };
 		EB0982952CA3F0480030225F /* SliderFilterValueModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB0982942CA3F0480030225F /* SliderFilterValueModel.swift */; };
 		EB6B56ED2C9EB4E3008E6F92 /* CDSingleDebugViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB6B56EC2C9EB4E3008E6F92 /* CDSingleDebugViewController.swift */; };
 		EB6B56F12C9EB960008E6F92 /* CDStyleCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB6B56F02C9EB960008E6F92 /* CDStyleCell.swift */; };
+		EB813B302CC8E161006B00B0 /* ColorFilterValueModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB813B2F2CC8E161006B00B0 /* ColorFilterValueModel.swift */; };
 		EB8B79712C9AA9D9005CF6AD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB8B79702C9AA9D9005CF6AD /* AppDelegate.swift */; };
 		EB8B79752C9AA9D9005CF6AD /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB8B79742C9AA9D9005CF6AD /* ViewController.swift */; };
 		EB8B79782C9AA9D9005CF6AD /* Base in Resources */ = {isa = PBXBuildFile; fileRef = EB8B79772C9AA9D9005CF6AD /* Base */; };
@@ -28,12 +28,12 @@
 		6815573B5A6060B358BCB2F5 /* Pods-CIImage-Debug.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CIImage-Debug.debug.xcconfig"; path = "Target Support Files/Pods-CIImage-Debug/Pods-CIImage-Debug.debug.xcconfig"; sourceTree = "<group>"; };
 		A6BA733E2273098C9A1B16C1 /* Pods-CIImage-Debug.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CIImage-Debug.release.xcconfig"; path = "Target Support Files/Pods-CIImage-Debug/Pods-CIImage-Debug.release.xcconfig"; sourceTree = "<group>"; };
 		EB0982892CA3E4810030225F /* SliderCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SliderCell.swift; sourceTree = "<group>"; };
-		EB09828C2CA3EE3E0030225F /* FilterContentModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterContentModel.swift; sourceTree = "<group>"; };
-		EB09828F2CA3EF540030225F /* CategoryBlurContentModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryBlurContentModel.swift; sourceTree = "<group>"; };
+		EB09828F2CA3EF540030225F /* FilterContentModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterContentModel.swift; sourceTree = "<group>"; };
 		EB0982912CA3F01F0030225F /* FilterValueModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterValueModel.swift; sourceTree = "<group>"; };
 		EB0982942CA3F0480030225F /* SliderFilterValueModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SliderFilterValueModel.swift; sourceTree = "<group>"; };
 		EB6B56EC2C9EB4E3008E6F92 /* CDSingleDebugViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CDSingleDebugViewController.swift; sourceTree = "<group>"; };
 		EB6B56F02C9EB960008E6F92 /* CDStyleCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CDStyleCell.swift; sourceTree = "<group>"; };
+		EB813B2F2CC8E161006B00B0 /* ColorFilterValueModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorFilterValueModel.swift; sourceTree = "<group>"; };
 		EB8B796D2C9AA9D9005CF6AD /* CIImage-Debug.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "CIImage-Debug.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		EB8B79702C9AA9D9005CF6AD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EB8B79742C9AA9D9005CF6AD /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -77,8 +77,7 @@
 		EB09828E2CA3EF040030225F /* ContentModel */ = {
 			isa = PBXGroup;
 			children = (
-				EB09828C2CA3EE3E0030225F /* FilterContentModel.swift */,
-				EB09828F2CA3EF540030225F /* CategoryBlurContentModel.swift */,
+				EB09828F2CA3EF540030225F /* FilterContentModel.swift */,
 			);
 			path = ContentModel;
 			sourceTree = "<group>";
@@ -88,6 +87,7 @@
 			children = (
 				EB0982912CA3F01F0030225F /* FilterValueModel.swift */,
 				EB0982942CA3F0480030225F /* SliderFilterValueModel.swift */,
+				EB813B2F2CC8E161006B00B0 /* ColorFilterValueModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -262,7 +262,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EB0982902CA3EF540030225F /* CategoryBlurContentModel.swift in Sources */,
+				EB0982902CA3EF540030225F /* FilterContentModel.swift in Sources */,
+				EB813B302CC8E161006B00B0 /* ColorFilterValueModel.swift in Sources */,
 				EB8B798A2C9D1273005CF6AD /* TabViewController.swift in Sources */,
 				EB0982952CA3F0480030225F /* SliderFilterValueModel.swift in Sources */,
 				EB09828A2CA3E4810030225F /* SliderCell.swift in Sources */,
@@ -270,7 +271,6 @@
 				EB8B79752C9AA9D9005CF6AD /* ViewController.swift in Sources */,
 				EB6B56F12C9EB960008E6F92 /* CDStyleCell.swift in Sources */,
 				EB6B56ED2C9EB4E3008E6F92 /* CDSingleDebugViewController.swift in Sources */,
-				EB09828D2CA3EE3E0030225F /* FilterContentModel.swift in Sources */,
 				EB8B79712C9AA9D9005CF6AD /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
