@@ -22,7 +22,7 @@ class TabViewController: UITabBarController {
         singleDebugVC.tabBarItem.image = .init(named: "tab_icon_learn_nor")
         singleDebugVC.tabBarItem.selectedImage = .init(named: "tab_icon_learn_select")
         
-        let combinedDebugVC = UINavigationController(rootViewController: <#T##UIViewController#>)
+        let combinedDebugVC = UINavigationController(rootViewController: CDSingleDebugViewController())
         combinedDebugVC.tabBarItem.title = "组合调试"
         combinedDebugVC.tabBarItem.setTitleTextAttributes([.font : UIFont.systemFont(ofSize: 14)], for: .normal)
         combinedDebugVC.tabBarItem.setBadgeTextAttributes([.foregroundColor : UIColor(hex: 0x3FA0FF)], for: .selected)

@@ -11,13 +11,8 @@ import MyBaseExtension
 class CDStyleCell: UICollectionViewCell {
     
     // MARK: - view
-    lazy var imgV: UIImageView = {
-        let imgV = UIImageView(frame: .init(x: 0, y: 0, width: kwidth, height: 100))
-        return imgV
-    }()
-    
     lazy var lab: UILabel = {
-        let lab = UILabel(frame: .init(x: 0, y: imgV.kmaxY + (kheight - imgV.kmaxY - 20) * 0.5, width: kwidth, height: 20))
+        let lab = UILabel(frame: .init(x: 0, y: 0, width: kwidth, height: kheight))
         lab.font = .systemFont(ofSize: 14)
         lab.textColor = .black
         lab.textAlignment = .center
@@ -28,14 +23,14 @@ class CDStyleCell: UICollectionViewCell {
     // MARK: - life time
     override init(frame: CGRect) {
         super.init(frame: frame)
+        contentView.addSubview(lab)
     }
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
     
-    func config(img: UIImage?, text: String) {
-        imgV.image = img
+    func config(text: String) {
         lab.text = text
     }
 }

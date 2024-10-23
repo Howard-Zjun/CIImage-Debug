@@ -133,15 +133,7 @@ public class STSliderViewModel: NSObject {
     
     public let maxValue: CGFloat
     
-    @objc dynamic var thumbValue: CGFloat {
-        didSet {
-            if thumbValue < minValue {
-                thumbValue = minValue
-            } else if thumbValue > maxValue {
-                thumbValue = maxValue
-            }
-        }
-    }
+    @objc dynamic public var thumbValue: CGFloat
     
     public init?(name: String, minValue: CGFloat, maxValue: CGFloat, thumbValue: CGFloat) {
         guard minValue < maxValue else {

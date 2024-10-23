@@ -9,24 +9,89 @@ import UIKit
 
 class CategoryBlurContentModel: FilterContentModel {
     
-    var name: String
+    let filter: CIFilter
     
-    var filterModel: [FilterValueModel]
+    let name: String
     
-    init(categoryBlur: CIFilterProtocol.Type) {
-        let mirror = Mirror(reflecting: categoryBlur)
-        var filterModel: [FilterValueModel] = []
-        for child in mirror.children {
-            if let lab = child.label {
-                let valueType = type(of: child.value)
-                if valueType == Float.self {
-                    if let model = STSliderViewModel(name: lab, minValue: 0, maxValue: 10, thumbValue: 5) {
-                        filterModel.append(SliderFilterValueModel(model: model))
+    let filterModels: [FilterValueModel]
+    
+    var observations: [NSKeyValueObservation] = []
+    
+    weak var delegate: (any FilterContentModelDelegate)?
+    
+    private var timer: Timer?
+    
+    private var keepFlag: Bool = false
+    
+    init(categoryBlur: CIFilter) {
+        self.filter = categoryBlur
+        
+        var filterModels: [FilterValueModel] = []
+        
+        var count: UInt32 = 0
+        let ivars = class_copyIvarList(categoryBlur.classForCoder, &count)
+        for i in 0..<count {
+            let ivar = ivars![Int(i)]
+            let ivarName = ivar_getName(ivar)
+            if let ivarName {
+                let name = String(cString: ivarName)
+                let value = categoryBlur.value(forKey: name)
+                if let cgFloatValue = value as? CGFloat {
+                    if let model = STSliderViewModel(name: name, minValue: 0, maxValue: cgFloatValue + 10, thumbValue: cgFloatValue) {
+                        filterModels.append(SliderFilterValueModel(model: model))
+                        
+                        
                     }
                 }
             }
         }
-        self.name = mirror.description
-        self.filterModel = filterModel
+        self.name = NSStringFromClass(categoryBlur.classForCoder)
+        self.filterModels = filterModels
+        
+        var observations: [NSKeyValueObservation] = []
+
+        for model in filterModels {
+            if let sliderValueModel = model as? SliderFilterValueModel {
+                let observation = sliderValueModel.model.observe(\.thumbValue, options: .new) { [weak self] tmp, change in
+                    self?.handleSingleSlider(keyName: tmp.name, value: tmp.thumbValue)
+                    
+                    self?.notiOutputImgChange()
+                }
+                observations.append(observation)
+            }
+        }
+        self.observations = observations
+    }
+    
+    deinit {
+        for observation in observations {
+            observation.invalidate()
+        }
+        timer?.invalidate()
+        timer = nil
+    }
+    
+    func notiOutputImgChange() {
+        if timer == nil {
+            let timer = Timer.scheduledTimer(withTimeInterval: 0.5, repeats: true) { [weak self] tmpTimer in
+                guard let self = self else {
+                    tmpTimer.invalidate()
+                    self?.timer = nil
+                    return
+                }
+                if keepFlag {
+                    delegate?.outputImgChange(model: self)
+                    keepFlag = false
+                } else {
+                    tmpTimer.invalidate()
+                    self.timer = nil
+                }
+            }
+            RunLoop.current.add(timer, forMode: .common)
+            self.timer = timer
+            delegate?.outputImgChange(model: self)
+        } else {
+            keepFlag = true
+        }
     }
 }
