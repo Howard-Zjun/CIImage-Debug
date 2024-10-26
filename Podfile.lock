@@ -1,6 +1,6 @@
 PODS:
-  - MyBaseExtension (0.0.3)
-  - MyControlView (0.0.7):
+  - MyBaseExtension (0.0.5)
+  - MyControlView (0.0.9):
     - MyBaseExtension (~> 0.0.3)
   - SnapKit (5.7.1)
 
@@ -16,8 +16,8 @@ SPEC REPOS:
     - SnapKit
 
 SPEC CHECKSUMS:
-  MyBaseExtension: 1c32c1b8f83d2371320a8c74dfaa58e181b2c2bf
-  MyControlView: 0a7c791822e7a658d854ea96fa0492b31c3a1ec1
+  MyBaseExtension: b4a156775637f6bea13af8eb3e12d2fb02116fd6
+  MyControlView: 1e577f5474a68aae6fda8ac031f017649c061b95
   SnapKit: d612e99e678a2d3b95bf60b0705ed0a35c03484a
 
 PODFILE CHECKSUM: 4204e34565025c512d1e6a785ffdae36f14ad197

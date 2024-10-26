@@ -7,6 +7,22 @@
 
 import UIKit
 
+let TOP_HEIGHT: CGFloat = isiPhoneXMore ? 44 : 32
+
+let BOTTOM_HEIGHT: CGFloat = isiPhoneXMore ? (49.5+17) : 49
+
+public var isiPhoneXMore: Bool {
+    var isMore:Bool = false
+    if #available(iOS 11.0, *) {
+        if let kKeyWindow {
+            isMore = kKeyWindow.safeAreaInsets.bottom > 0.0
+        } else {
+            isMore = false
+        }
+    }
+    return isMore
+}
+
 public var kKeyWindow: UIWindow? {
     UIApplication.shared.connectedScenes
         .filter { $0.activationState == .foregroundActive }
