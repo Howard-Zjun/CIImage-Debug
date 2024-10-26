@@ -30,7 +30,8 @@ class CDStyleCell: UICollectionViewCell {
         fatalError("init(coder:) has not been implemented")
     }
     
-    func config(text: String) {
+    func config(text: String, isSelected: Bool) {
         lab.text = text
+        lab.textColor = .init(hex: isSelected ? 0x329AFF : 0x000000)
     }
 }

@@ -2,7 +2,7 @@
 //  CategoryBlurContentModel.swift
 //  CIImage-Debug
 //
-//  Created by ios on 2024/9/25.
+//  Created by Howard-Zjun on 2024/9/25.
 //
 
 import UIKit
@@ -12,7 +12,14 @@ protocol FilterContentModelDelegate: NSObjectProtocol {
     func outputImgChange(model: FilterContentModel)
 }
 
-class FilterContentModel: NSObject {
+protocol SelectProtocol {
+
+    var isSelected: Bool { get set }
+}
+
+class FilterContentModel: NSObject, SelectProtocol {
+    
+    var isSelected: Bool = false
     
     let filter: CIFilter
     
@@ -41,16 +48,32 @@ class FilterContentModel: NSObject {
             if let ivarName {
                 let name = String(cString: ivarName)
                 let value = categoryBlur.value(forKey: name)
-                if let cgFloatValue = value as? CGFloat {
-                    if let model = STSliderViewModel(name: name, minValue: 0, maxValue: cgFloatValue + 10, thumbValue: cgFloatValue) {
-                        filterModels.append(SliderFilterValueModel(model: model))
+                var isMatch = true
+                if value != nil { // 有值能通过类型识别
+                    if let cgFloatValue = value as? CGFloat {
+                        if let model = STSliderViewModel(name: name, minValue: 0, maxValue: cgFloatValue + 10, thumbValue: cgFloatValue) {
+                            filterModels.append(SliderFilterValueModel(model: model))
+                        }
+                    } else if let ciColor = value as? CIColor {
+                        let model = ColorFilterValueModel(name: name, hue: 0, sat: 0)
+                        filterModels.append(model)
+                    } else if let point = value as? CGPoint {
+                        
+                    } else {
+                        isMatch = false
                     }
-                } else if let ciColor = value as? CIColor {
-                    
-                } else if let point = value as? CGPoint {
-                    
                 }
-                // colorSpace
+                
+                if !isMatch { // 没值通过名称识别
+                    if name == "inputMask" {
+                        let model = ColorFilterValueModel(name: name, hue: 0, sat: 0)
+                        filterModels.append(model)
+                    } else if name == "inputCenter" {
+                        
+                    } else {
+                        
+                    }
+                }
             }
         }
         self.name = NSStringFromClass(categoryBlur.classForCoder)
@@ -61,13 +84,32 @@ class FilterContentModel: NSObject {
         var observations: [NSKeyValueObservation] = []
 
         for model in filterModels {
-            if let sliderValueModel = model as? SliderFilterValueModel {
-                let observation = sliderValueModel.model.observe(\.thumbValue, options: .new) { [weak self] tmp, change in
-                    self?.handleSingleSlider(keyName: tmp.name, value: tmp.thumbValue)
+            let keyName = model.name
+            if let sliderModel = model as? SliderFilterValueModel {
+                let observation = sliderModel.model.observe(\.thumbValue, options: .new) { [weak self] tmp, change in
+                    
+                    self?.filter.setValue(tmp.thumbValue, forKey: keyName)
                     
                     self?.notiOutputImgChange()
                 }
                 observations.append(observation)
+            } else if let colorModel = model as? ColorFilterValueModel {
+                let observation1 = colorModel.model.observe(\.hue, options: .new) { [weak self] tmp, change in
+                    
+                    let ciColor = UIColor(hue: tmp.hue, saturation: tmp.sat, brightness: 1, alpha: 1).ciColor
+                    self?.filter.setValue(ciColor, forKey: keyName)
+                    
+                    self?.notiOutputImgChange()
+                }
+                let observation2 = colorModel.model.observe(\.sat, options: .new) { [weak self] tmp, change in
+                    
+                    let ciColor = UIColor(hue: tmp.hue, saturation: tmp.sat, brightness: 1, alpha: 1).ciColor
+                    self?.filter.setValue(ciColor, forKey: keyName)
+                    
+                    self?.notiOutputImgChange()
+                }
+                observations.append(observation1)
+                observations.append(observation2)
             }
         }
         self.observations = observations
@@ -105,11 +147,3 @@ class FilterContentModel: NSObject {
         }
     }
 }
-
-extension FilterContentModel {
-    
-    func handleSingleSlider(keyName: String, value: CGFloat) {
-        filter.setValue(value, forKey: keyName)
-    }
-}
-

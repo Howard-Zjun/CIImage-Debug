@@ -2,16 +2,20 @@
 //  SliderFilterValueModel.swift
 //  CIImage-Debug
 //
-//  Created by ios on 2024/9/25.
+//  Created by Howard-Zjun on 2024/9/25.
 //
 
 import UIKit
+import MyControlView
 
 class SliderFilterValueModel: FilterValueModel {
-
-    var model: STSliderViewModel
+    
+    let name: String
+    
+    let model: STSliderViewModel
     
     init(model: STSliderViewModel) {
+        self.name = model.name
         self.model = model
     }
 }

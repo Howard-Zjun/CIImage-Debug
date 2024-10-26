@@ -2,12 +2,12 @@
 //  AppDelegate.swift
 //  CIImage-Debug
 //
-//  Created by ios on 2024/9/18.
+//  Created by Howard-Zjun on 2024/9/18.
 //
 
 import UIKit
-@_exported import MyBaseExtension
-@_exported import MyControlView
+import MyBaseExtension
+import MyControlView
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {

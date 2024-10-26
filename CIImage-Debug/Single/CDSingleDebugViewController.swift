@@ -31,9 +31,9 @@ class CDSingleDebugViewController: UIViewController {
         // CICategoryBlur
         [CIFilter.bokehBlur(), CIFilter.boxBlur(), CIFilter.discBlur(), CIFilter.gaussianBlur(), CIFilter.maskedVariableBlur(), CIFilter.median(), CIFilter.morphologyGradient(), CIFilter.morphologyMaximum(), CIFilter.morphologyMinimum(), CIFilter.morphologyRectangleMaximum(), CIFilter.morphologyRectangleMinimum(), CIFilter.motionBlur(), CIFilter.noiseReduction(), CIFilter.zoomBlur()],
         // CICategoryGradient
-        [CIFilter.gaussianGradient(), CIFilter.hueSaturationValueGradient(), CIFilter.linearGradient(), CIFilter.radialGradient(), CIFilter.smoothLinearGradient()],
-        // CICategorySharpen
-        [CIFilter.sharpenLuminance(), CIFilter.unsharpMask()],
+//        [CIFilter.gaussianGradient(), CIFilter.hueSaturationValueGradient(), CIFilter.linearGradient(), CIFilter.radialGradient(), CIFilter.smoothLinearGradient()],
+//        // CICategorySharpen
+//        [CIFilter.sharpenLuminance(), CIFilter.unsharpMask()],
     ]
     
     var dict: [String : FilterContentModel] = [:]
@@ -95,7 +95,7 @@ class CDSingleDebugViewController: UIViewController {
     }
     
     func resolver(filter: CIFilter) -> FilterContentModel {
-        let str = String(describing: filter)
+        let str = NSStringFromClass(filter.classForCoder)
         var ret = dict[str]
         if let ret {
             return ret
@@ -125,10 +125,15 @@ extension CDSingleDebugViewController: UITableViewDelegate, UITableViewDataSourc
         guard let curModel else {
             return .init()
         }
-        let valueModel = curModel.filterModels[indexPath.row]
-        if let sliderValueModel = valueModel as? SliderFilterValueModel {
+        let valueModel = curModel.filterModels[indexPath.section]
+        if let sliderModel = valueModel as? SliderFilterValueModel {
             let cell = tableView.dequeueReusableCell(SliderCell.self, indexPath: indexPath)
-            cell.filterModel = sliderValueModel
+            cell.filterModel = sliderModel
+            cell.selectionStyle = .none
+            return cell
+        } else if let colorModel = valueModel as? ColorFilterValueModel {
+            let cell = tableView.dequeueReusableCell(ColorPickerCell.self, indexPath: indexPath)
+            cell.filterModel = colorModel
             cell.selectionStyle = .none
             return cell
         }
@@ -156,15 +161,18 @@ extension CDSingleDebugViewController: UICollectionViewDelegate, UICollectionVie
         let cell = collectionView.dequeueReusableCell(CDStyleCell.self, indexPath: indexPath)
         let type = types[indexPath.section][indexPath.item]
         let model = resolver(filter: type)
-        cell.config(text: model.name)
+        cell.config(text: model.name, isSelected: model.isSelected)
         return cell
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let type = types[indexPath.section][indexPath.item]
+        curModel?.isSelected = false
         let model = resolver(filter: type)
         curModel = model
+        curModel?.isSelected = true
         debugTableView.reloadData()
+        styleCollectionView.reloadData()
         
         outputImgChange(model: model)
     }

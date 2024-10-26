@@ -12,6 +12,7 @@
 		EB0982902CA3EF540030225F /* FilterContentModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB09828F2CA3EF540030225F /* FilterContentModel.swift */; };
 		EB0982922CA3F01F0030225F /* FilterValueModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB0982912CA3F01F0030225F /* FilterValueModel.swift */; };
 		EB0982952CA3F0480030225F /* SliderFilterValueModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB0982942CA3F0480030225F /* SliderFilterValueModel.swift */; };
+		EB4B7DC42CCCD96E00718543 /* ColorPickerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB4B7DC32CCCD96E00718543 /* ColorPickerCell.swift */; };
 		EB6B56ED2C9EB4E3008E6F92 /* CDSingleDebugViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB6B56EC2C9EB4E3008E6F92 /* CDSingleDebugViewController.swift */; };
 		EB6B56F12C9EB960008E6F92 /* CDStyleCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB6B56F02C9EB960008E6F92 /* CDStyleCell.swift */; };
 		EB813B302CC8E161006B00B0 /* ColorFilterValueModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB813B2F2CC8E161006B00B0 /* ColorFilterValueModel.swift */; };
@@ -31,6 +32,7 @@
 		EB09828F2CA3EF540030225F /* FilterContentModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterContentModel.swift; sourceTree = "<group>"; };
 		EB0982912CA3F01F0030225F /* FilterValueModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterValueModel.swift; sourceTree = "<group>"; };
 		EB0982942CA3F0480030225F /* SliderFilterValueModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SliderFilterValueModel.swift; sourceTree = "<group>"; };
+		EB4B7DC32CCCD96E00718543 /* ColorPickerCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorPickerCell.swift; sourceTree = "<group>"; };
 		EB6B56EC2C9EB4E3008E6F92 /* CDSingleDebugViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CDSingleDebugViewController.swift; sourceTree = "<group>"; };
 		EB6B56F02C9EB960008E6F92 /* CDStyleCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CDStyleCell.swift; sourceTree = "<group>"; };
 		EB813B2F2CC8E161006B00B0 /* ColorFilterValueModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorFilterValueModel.swift; sourceTree = "<group>"; };
@@ -70,6 +72,7 @@
 			children = (
 				EB0982932CA3F0370030225F /* Model */,
 				EB0982892CA3E4810030225F /* SliderCell.swift */,
+				EB4B7DC32CCCD96E00718543 /* ColorPickerCell.swift */,
 			);
 			path = CDTableViewCell;
 			sourceTree = "<group>";
@@ -265,6 +268,7 @@
 				EB0982902CA3EF540030225F /* FilterContentModel.swift in Sources */,
 				EB813B302CC8E161006B00B0 /* ColorFilterValueModel.swift in Sources */,
 				EB8B798A2C9D1273005CF6AD /* TabViewController.swift in Sources */,
+				EB4B7DC42CCCD96E00718543 /* ColorPickerCell.swift in Sources */,
 				EB0982952CA3F0480030225F /* SliderFilterValueModel.swift in Sources */,
 				EB09828A2CA3E4810030225F /* SliderCell.swift in Sources */,
 				EB0982922CA3F01F0030225F /* FilterValueModel.swift in Sources */,
