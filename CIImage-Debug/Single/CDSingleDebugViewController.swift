@@ -61,6 +61,7 @@ class CDSingleDebugViewController: UIViewController {
         debugTableView.delegate = self
         debugTableView.dataSource = self
         debugTableView.register(SliderCell.self)
+        debugTableView.register(ColorPickerCell.self)
         debugTableView.separatorStyle = .none
         if #available(iOS 15.0, *) {
             debugTableView.sectionHeaderTopPadding = 0

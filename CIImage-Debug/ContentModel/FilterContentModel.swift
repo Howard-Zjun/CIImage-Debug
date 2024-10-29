@@ -95,15 +95,16 @@ class FilterContentModel: NSObject, SelectProtocol {
                 observations.append(observation)
             } else if let colorModel = model as? ColorFilterValueModel {
                 let observation1 = colorModel.model.observe(\.hue, options: .new) { [weak self] tmp, change in
-                    
-                    let ciColor = UIColor(hue: tmp.hue, saturation: tmp.sat, brightness: 1, alpha: 1).ciColor
+                    // UIColor(hue: tmp.hue, saturation: tmp.sat, brightness: 1, alpha: 1).ciColor 会崩溃，需要转换颜色空间
+                    let color = UIColor(hue: tmp.hue, saturation: tmp.sat, brightness: 1, alpha: 1)
+                    let ciColor = CIColor(color: color)
                     self?.filter.setValue(ciColor, forKey: keyName)
                     
                     self?.notiOutputImgChange()
                 }
                 let observation2 = colorModel.model.observe(\.sat, options: .new) { [weak self] tmp, change in
-                    
-                    let ciColor = UIColor(hue: tmp.hue, saturation: tmp.sat, brightness: 1, alpha: 1).ciColor
+                    let color = UIColor(hue: tmp.hue, saturation: tmp.sat, brightness: 1, alpha: 1)
+                    let ciColor = CIColor(color: color)
                     self?.filter.setValue(ciColor, forKey: keyName)
                     
                     self?.notiOutputImgChange()

@@ -17,16 +17,18 @@ class ColorPickerCell: UITableViewCell {
     }
     
     lazy var pickerColorView: MYHSBColorPickerView = {
-        let colorPickerView = MYHSBColorPickerView(x: 0, y: 0, width: kheight)
+        let colorPickerView = MYHSBColorPickerView(x: 0, y: 0, width: kwidth * 0.7)
         return colorPickerView
     }()
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
+        backgroundColor = .clear
         contentView.addSubview(pickerColorView)
         pickerColorView.snp.makeConstraints { make in
+            make.top.bottom.equalToSuperview()
             make.center.equalToSuperview()
-            make.size.equalTo(kheight)
+            make.size.equalTo(kwidth * 0.7)
         }
     }
     
