@@ -22,6 +22,8 @@
 		EB8B797A2C9AA9DF005CF6AD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EB8B79792C9AA9DF005CF6AD /* Assets.xcassets */; };
 		EB8B797D2C9AA9DF005CF6AD /* Base in Resources */ = {isa = PBXBuildFile; fileRef = EB8B797C2C9AA9DF005CF6AD /* Base */; };
 		EB8B798A2C9D1273005CF6AD /* TabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB8B79892C9D1273005CF6AD /* TabViewController.swift */; };
+		EBED0B402CD1E201008DEB25 /* PickerImageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBED0B3F2CD1E201008DEB25 /* PickerImageCell.swift */; };
+		EBED0B422CD20586008DEB25 /* PickerImageFilterValueModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBED0B412CD20586008DEB25 /* PickerImageFilterValueModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -45,6 +47,8 @@
 		EB8B797E2C9AA9DF005CF6AD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EB8B79852C9AC287005CF6AD /* CIImage-Debug-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "CIImage-Debug-Bridging-Header.h"; sourceTree = "<group>"; };
 		EB8B79892C9D1273005CF6AD /* TabViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabViewController.swift; sourceTree = "<group>"; };
+		EBED0B3F2CD1E201008DEB25 /* PickerImageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickerImageCell.swift; sourceTree = "<group>"; };
+		EBED0B412CD20586008DEB25 /* PickerImageFilterValueModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickerImageFilterValueModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -73,6 +77,7 @@
 				EB0982932CA3F0370030225F /* Model */,
 				EB0982892CA3E4810030225F /* SliderCell.swift */,
 				EB4B7DC32CCCD96E00718543 /* ColorPickerCell.swift */,
+				EBED0B3F2CD1E201008DEB25 /* PickerImageCell.swift */,
 			);
 			path = CDTableViewCell;
 			sourceTree = "<group>";
@@ -91,6 +96,7 @@
 				EB0982912CA3F01F0030225F /* FilterValueModel.swift */,
 				EB0982942CA3F0480030225F /* SliderFilterValueModel.swift */,
 				EB813B2F2CC8E161006B00B0 /* ColorFilterValueModel.swift */,
+				EBED0B412CD20586008DEB25 /* PickerImageFilterValueModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -266,12 +272,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				EB0982902CA3EF540030225F /* FilterContentModel.swift in Sources */,
+				EBED0B402CD1E201008DEB25 /* PickerImageCell.swift in Sources */,
 				EB813B302CC8E161006B00B0 /* ColorFilterValueModel.swift in Sources */,
 				EB8B798A2C9D1273005CF6AD /* TabViewController.swift in Sources */,
 				EB4B7DC42CCCD96E00718543 /* ColorPickerCell.swift in Sources */,
 				EB0982952CA3F0480030225F /* SliderFilterValueModel.swift in Sources */,
 				EB09828A2CA3E4810030225F /* SliderCell.swift in Sources */,
 				EB0982922CA3F01F0030225F /* FilterValueModel.swift in Sources */,
+				EBED0B422CD20586008DEB25 /* PickerImageFilterValueModel.swift in Sources */,
 				EB8B79752C9AA9D9005CF6AD /* ViewController.swift in Sources */,
 				EB6B56F12C9EB960008E6F92 /* CDStyleCell.swift in Sources */,
 				EB6B56ED2C9EB4E3008E6F92 /* CDSingleDebugViewController.swift in Sources */,
@@ -433,6 +441,7 @@
 				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "CIImage-Debug/Info.plist";
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "应用需要使用相册";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
@@ -466,6 +475,7 @@
 				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "CIImage-Debug/Info.plist";
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "应用需要使用相册";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";

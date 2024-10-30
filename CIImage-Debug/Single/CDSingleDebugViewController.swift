@@ -31,7 +31,7 @@ class CDSingleDebugViewController: UIViewController {
         // CICategoryBlur
         [CIFilter.bokehBlur(), CIFilter.boxBlur(), CIFilter.discBlur(), CIFilter.gaussianBlur(), CIFilter.maskedVariableBlur(), CIFilter.median(), CIFilter.morphologyGradient(), CIFilter.morphologyMaximum(), CIFilter.morphologyMinimum(), CIFilter.morphologyRectangleMaximum(), CIFilter.morphologyRectangleMinimum(), CIFilter.motionBlur(), CIFilter.noiseReduction(), CIFilter.zoomBlur()],
         // CICategoryGradient
-//        [CIFilter.gaussianGradient(), CIFilter.hueSaturationValueGradient(), CIFilter.linearGradient(), CIFilter.radialGradient(), CIFilter.smoothLinearGradient()],
+        [CIFilter.gaussianGradient(), CIFilter.hueSaturationValueGradient(), CIFilter.linearGradient(), CIFilter.radialGradient(), CIFilter.smoothLinearGradient()],
 //        // CICategorySharpen
 //        [CIFilter.sharpenLuminance(), CIFilter.unsharpMask()],
     ]
@@ -62,6 +62,7 @@ class CDSingleDebugViewController: UIViewController {
         debugTableView.dataSource = self
         debugTableView.register(SliderCell.self)
         debugTableView.register(ColorPickerCell.self)
+        debugTableView.register(PickerImageCell.self)
         debugTableView.separatorStyle = .none
         if #available(iOS 15.0, *) {
             debugTableView.sectionHeaderTopPadding = 0
@@ -102,7 +103,7 @@ class CDSingleDebugViewController: UIViewController {
             return ret
         }
         ret = FilterContentModel(categoryBlur: filter)
-        if let cgImage = selectImg.cgImage {
+        if ret!.haveInputImage, let cgImage = selectImg.cgImage {
             filter.setValue(CIImage(cgImage: cgImage), forKey: "inputImage")
         }
         ret?.delegate = self
@@ -135,6 +136,11 @@ extension CDSingleDebugViewController: UITableViewDelegate, UITableViewDataSourc
         } else if let colorModel = valueModel as? ColorFilterValueModel {
             let cell = tableView.dequeueReusableCell(ColorPickerCell.self, indexPath: indexPath)
             cell.filterModel = colorModel
+            cell.selectionStyle = .none
+            return cell
+        } else if let pickerImageModel = valueModel as? PickerImageFilterValueModel {
+            let cell = tableView.dequeueReusableCell(PickerImageCell.self, indexPath: indexPath)
+            cell.filterModel = pickerImageModel
             cell.selectionStyle = .none
             return cell
         }

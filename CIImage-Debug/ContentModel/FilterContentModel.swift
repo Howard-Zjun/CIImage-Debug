@@ -35,6 +35,19 @@ class FilterContentModel: NSObject, SelectProtocol {
     
     private var keepFlag: Bool = false
     
+    var haveInputImage: Bool {
+        var count: UInt32 = 0
+        let propertys = class_copyPropertyList(filter.classForCoder, &count)
+        for i in 0..<count {
+            let property = propertys![Int(i)]
+                let name = String(cString: property_getName(property))
+                if name == "inputImage" {
+                    return true
+                }
+        }
+        return false
+    }
+    
     init(categoryBlur: CIFilter) {
         self.filter = categoryBlur
         
@@ -51,26 +64,26 @@ class FilterContentModel: NSObject, SelectProtocol {
                 var isMatch = true
                 if value != nil { // 有值能通过类型识别
                     if let cgFloatValue = value as? CGFloat {
-                        if let model = STSliderViewModel(name: name, minValue: 0, maxValue: cgFloatValue + 10, thumbValue: cgFloatValue) {
+                        if let model = STSliderViewModel(name: name, minValue: 0, maxValue: cgFloatValue * 2, thumbValue: cgFloatValue) {
                             filterModels.append(SliderFilterValueModel(model: model))
                         }
-                    } else if let ciColor = value as? CIColor {
+                    } else if let _ = value as? CIColor {
                         let model = ColorFilterValueModel(name: name, hue: 0, sat: 0)
                         filterModels.append(model)
                     } else if let point = value as? CGPoint {
-                        
+                        isMatch = false
                     } else {
                         isMatch = false
                     }
+                } else {
+                    isMatch = false
                 }
                 
                 if !isMatch { // 没值通过名称识别
                     if name == "inputMask" {
-                        let model = ColorFilterValueModel(name: name, hue: 0, sat: 0)
+                        let model = PickerImageFilterValueModel(name: name)
                         filterModels.append(model)
                     } else if name == "inputCenter" {
-                        
-                    } else {
                         
                     }
                 }
@@ -111,6 +124,16 @@ class FilterContentModel: NSObject, SelectProtocol {
                 }
                 observations.append(observation1)
                 observations.append(observation2)
+            } else if let pickerImageModel = model as? PickerImageFilterValueModel {
+                let observation = pickerImageModel.observe(\.img, options: .new) { [weak self] tmp, change in
+                    if let img = tmp.img {
+                        let ciImage = CIImage(image: img)
+                        self?.filter.setValue(ciImage, forKey: keyName)
+                        
+                        self?.notiOutputImgChange()
+                    }
+                }
+                observations.append(observation)
             }
         }
         self.observations = observations
